@@ -1,15 +1,29 @@
 {{!< default}}
 
-<div class="gh-page">
-    <div class="gh-container">
-
-        <div class="gh-postfeed">
-        {{#foreach posts}}
-
-            {{> "card"}} {{!-- partials/card.hbs --}}
-
-        {{/foreach}}
-        </div>
-
-    </div>
+<div class="home-hero-container">
+	<div class="home-hero">
+		<img class="home-hero__banner" src="{{asset "assets/images/hero-banner-image.webp"}}" alt="hero banner">
+		<div class="home-hero__logo">
+			<img src="{{asset "assets/images/logo.png"}}" alt="logo image">
+			<h2>Rune<span style="color: rgb(59, 165, 255);">shock</span></h2>
+		</div>
+		<h1 class="home-hero__title">The latest news and updates for Runeshock</h1>
+	</div>
+</div>
+<div class="home-body-container">
+	<div class="home-body">
+		<div class="home-featured">
+			{{#get "posts" include="tags,authors" limit="1" filter="featured:true"}}
+				{{#foreach posts}}
+					{{> big-card}}
+				{{/foreach}}
+			{{/get}}
+		</div>
+		<div class="home-posts post-feed">
+			{{#foreach posts}}
+				{{> card}}
+			{{/foreach}}
+		</div>
+		<div class="home-pagination">{{pagination}}</div>
+	</div>
 </div>

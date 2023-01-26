@@ -1,0 +1,27 @@
+<article class="b-card">
+	<div class="b-card__left">
+		{{#if feature_image}}
+			<a href="{{url}}"><img src="{{feature_image}}" alt="post image" class="b-card__img"></a>
+		{{else}}
+			<a href="{{url}}"><img src="{{asset "assets/images/post-img-placeholder.jpg"}}" alt="post image" class="b-card__img"></a>
+		{{/if}}
+	</div>
+	<div class="b-card__right">
+		<div class="b-card__tags">{{tags}}</div>
+		<a href="{{url}}"><h2 class="b-card__title">{{title}}</h2></a>
+		<div class="b-card__content">{{content}}</div>
+		<div class="b-card__footer">
+			{{#foreach authors}}
+				<img src="{{profile_image}}" alt="author image" class="b-card__author-img">
+				<div class="b-card__footer-info">
+					<span class="b-card__name">{{name}}</span>
+			{{/foreach}}
+					<div class="b-card__footer-time">
+						<div class="b-card__date"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time></div>
+						<div class="b-card__separator"></div>
+						<div class="b-card__read-time">{{reading_time}}</div>
+					</div>
+				</div>
+		</div>
+	</div>
+</article>

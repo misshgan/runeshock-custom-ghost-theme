@@ -6,6 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
+	<link rel="stylesheet" type="text/css" href="{{asset "built/main.css"}}" />
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Quantico:wght@400;700&display=swap" rel="stylesheet">
 
     <title>{{meta_title}}</title>
 
@@ -14,41 +19,22 @@
 
 </head>
 <body class="{{body_class}}">
-<div class="gh-viewport">
 
-<header id="gh-head" class="gh-head">
-    <nav class="gh-head-inner gh-container">
-
-        <div class="gh-head-brand">
-            <a class="gh-head-logo" href="{{@site.url}}">
-                {{#if @site.logo}}
-                    <img src="{{@site.logo}}" alt="{{@site.title}}" />
-                {{else}}
-                    {{@site.title}}
-                {{/if}}
-            </a>
-            <a class="gh-burger" role="button">
-                <div class="gh-burger-box">
-                    <div class="gh-burger-inner"></div>
-                </div>
-            </a>
-        </div>
-        <div class="gh-head-menu">
-            {{navigation}}
-        </div>
-        <div class="gh-head-actions">
-            <div class="gh-head-actions-list">
-                {{#if @site.facebook}}
-                <a href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
-                {{/if}}
-                {{#if @site.twitter}}
-                <a href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
-                {{/if}}
-                <a href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS" target="_blank" rel="noopener">{{> "icons/rss"}}</a>
-            </div>
-        </div>
-    </nav>
-</header>
+	<div class="header-container">
+		<header class="header w-1200">
+			<nav class="header__nav">
+				<a href="{{@site.url}}" class="header__nav-link">Home</a>
+				<a href="#" class="header__nav-link">Go to Runeshock.com</a>
+			</nav>
+			<div class="header__links">
+				<a target="_blank" class="header__link" href="#"><img src="{{asset "assets/images/twitter-icon.svg"}}" alt="twitter icon"></a>
+				<a target="_blank" class="header__link" href="#"><img src="{{asset "assets/images/discord-icon.svg"}}" alt="discord icon"></a>
+				<a target="_blank" class="header__link" href="#"><img src="{{asset "assets/images/tiktok-icon.svg"}}" alt="tik-tok icon"></a>
+				<a target="_blank" class="header__link" href="#"><img src="{{asset "assets/images/youtube-icon.svg"}}" alt="youtube icon"></a>
+				<a target="_blank" class="header__link" href="#"><img src="{{asset "assets/images/instagram-icon.svg"}}" alt="instagram icon"></a>
+			</div>
+		</header>
+	</div>
 
 <main class="gh-main">
 
@@ -57,17 +43,23 @@
 
 </main>
 
-<footer class="gh-foot">
-    <div class="gh-container">
-        <div class="gh-foot-menu">
-            {{navigation}}
-        </div>
-        <div class="gh-foot-meta">
-            Published with <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
-        </div>
-    </div>
-</footer>
-
+<div class="footer-container">
+	<footer class="footer w-1200">
+		<div class="home-hero__logo">
+			<img src="{{asset "assets/images/logo.png"}}" alt="logo image">
+			<h2>Rune<span style="color: rgb(59, 165, 255);">shock</span></h2>
+		</div>
+		<div class="header__links">
+			<a target="_blank" class="header__link" href="#"><img src="{{asset "assets/images/twitter-icon.svg"}}" alt="twitter icon"></a>
+			<a target="_blank" class="header__link" href="#"><img src="{{asset "assets/images/discord-icon.svg"}}" alt="discord icon"></a>
+			<a target="_blank" class="header__link" href="#"><img src="{{asset "assets/images/tiktok-icon.svg"}}" alt="tik-tok icon"></a>
+			<a target="_blank" class="header__link" href="#"><img src="{{asset "assets/images/youtube-icon.svg"}}" alt="youtube icon"></a>
+			<a target="_blank" class="header__link" href="#"><img src="{{asset "assets/images/instagram-icon.svg"}}" alt="instagram icon"></a>
+		</div>
+		<div class="footer__copy">
+			©2020-2022 Runeshock. All Rights Reserved.
+		</div>
+	</footer>
 </div>
 
 {{!-- <foot> --}}
@@ -78,7 +70,7 @@
 <script>
     var maxPages = parseInt('{{pagination.pages}}');
 </script>
-<script src="{{asset "built/infinitescroll.js"}}"></script>
+<script src="{{asset "built/infinite-scroll.js"}}"></script>
 {{/if}}
 
 <script>

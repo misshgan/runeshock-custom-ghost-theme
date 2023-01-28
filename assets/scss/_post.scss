@@ -3,7 +3,15 @@
 .post-page {
 
 	&__header {
-		padding-top: 7rem;
+		padding-top: 15rem;
+
+		@media (max-width:800px) {
+			padding-top: 7rem;
+		}
+
+		@media (max-width:600px) {
+			padding-top: 5rem;
+		}
 	}
 	&__title {
 		color: $accent-color;
@@ -31,14 +39,31 @@
 		}
 	}
 	&__img {
-		margin: 7rem 0 3rem;
+		margin: 15rem 0 3rem;
 		width: 100%;
 		box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+		@media (max-width:800px) {
+			margin: 7rem 0 3rem;
+		}
+
+		@media (max-width:600px) {
+			margin: 5rem 0 2rem;
+		}
 	}
+
+	.b-card__footer {
+		padding: 0 2rem;
+	}
+
 	&__body {
-		width: 800px;
+		max-width: 800px;
 		margin: 0 auto;
 		padding: 5rem 0;
+
+		@media (max-width:600px) {
+			padding: 3rem 0;
+		}
 
 		h2 {
 			color: $accent-color;

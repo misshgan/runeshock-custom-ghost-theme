@@ -10,6 +10,11 @@
 	padding: 2rem 0;
 
 	.home-hero__logo {
+		margin-bottom: 0;
+
+		@media (max-width:768px) {
+			margin: 0 auto;
+		}
 	}
 	.header__links {
 	}
@@ -22,5 +27,7 @@
 		color: $text-color-dark;
 		line-height: 1.2;
 		font-size: 1.6rem;
+
+		margin-top: 2rem;
 	}
 }

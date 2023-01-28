@@ -1,7 +1,11 @@
 .tag-page-container {
 }
 .tag-page {
-	padding: 7rem 0 4rem;
+	padding: 10rem 0 4rem;
+
+	@media (max-width:768px) {
+		padding: 5rem 0 4rem;
+	}
 
 	&__title {
 		width: max-content;
@@ -20,7 +24,11 @@
 		line-height: 1.2;
 		font-size: 2rem;
 
-		margin-bottom: 9rem;
+		margin-bottom: 10rem;
+
+		@media (max-width:768px) {
+			margin-bottom: 5rem;
+		}
 	}
 	&__posts {
 		display: flex;
